@@ -10,3 +10,8 @@ ACCESS_SECRET = 'IPIagFYVIxdFF3wL2Y4kC4HBD63b1TpiYQVs8u6NC0NTT'
 auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
 auth.set_access_token(ACCESS_KEY, ACCESS_SECRET)
 api = tweepy.API(auth)
+
+mentions = api.mentions_timeline()
+
+for mention in mentions:
+    print(str(mention.id))
